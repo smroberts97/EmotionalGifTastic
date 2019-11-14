@@ -1,0 +1,45 @@
+body {
+    margin: 10px;
+    font-family: "Stylish";
+    font-size: 28px;
+    max-width: 1080px;
+    width: 100%;
+    min-height: 660px;
+    background: url("../images/concrete_seamless.png");
+}
+
+#img-display {
+    max-width: 1020px;
+    width: 100%;
+}
+
+.card-div {
+    position: relative;
+    float: left;
+    margin: 10px 1px;
+    padding: 10px 1px;
+}
+
+img {
+    margin-top: 10px;
+    padding: 15px 2px;
+    height: 180px;
+}
+
+span {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: left;
+    padding-left: 2px;
+    font-size: 18px;
+}
+
+button {
+    margin: 2px;
+    padding: 2px;
+    height: 42px;
+    text-align: center;
+    background-color: darkcyan;
+    color: whitesmoke;
+}
