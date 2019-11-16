@@ -1,11 +1,13 @@
 body {
     margin: 10px;
-    font-family: "Stylish";
+    font-family: 'Staatliches', cursive;;
     font-size: 28px;
     max-width: 1080px;
     width: 100%;
     min-height: 660px;
-    background: url("../images/concrete_seamless.png");
+    background: url("http://getwallpapers.com/wallpaper/full/0/f/b/181190.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
 }
 
 #img-display {
@@ -39,7 +41,8 @@ button {
     margin: 2px;
     padding: 2px;
     height: 42px;
+    font-family: 'Staatliches', cursive;
     text-align: center;
-    background-color: darkcyan;
-    color: whitesmoke;
+    background-color: hotpink;
+    color: white;
 }

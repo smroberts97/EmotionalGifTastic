@@ -4,7 +4,7 @@ function displayemotionImg() {
     $("#img-display").empty();
 
     var emotion = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=RpbF7yK9jdJvEIcxqxFvfqB36r3852SI&limit=" + MAX_NUM_IMAGES;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "7AnBpMDg5rccmyQD6jduWBPZkjNS89MV" + MAX_NUM_IMAGES;
 
     // Creates AJAX call for the specific emotion button being clicked
     $.ajax({
