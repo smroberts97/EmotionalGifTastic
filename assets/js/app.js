@@ -1,18 +1,18 @@
 var emotions = ["happy", "sad", "shy", "crazy", "proud", "scared", "sleepy", "mad", "bored", "excited"];
-var MAX_NUM_IMAGES = 10;
+var showImages = 10;
 function displayemotionImg() {
     $("#img-display").empty();
 
     var emotion = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=RpbF7yK9jdJvEIcxqxFvfqB36r3852SI&limit=" + MAX_NUM_IMAGES;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=RpbF7yK9jdJvEIcxqxFvfqB36r3852SI&limit=" + showImages;
 
-    // Creates AJAX call for the specific emotion button being clicked
+    // AJAX call
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        for (var i = 0; i < MAX_NUM_IMAGES; i++) {
+        for (var i = 0; i < showImages; i++) {
             var stillImgUrl = response.data[i].images.downsized_still.url;
             var animateUrl = response.data[i].images.downsized.url;
             // shrink the image size
@@ -65,8 +65,7 @@ function renderButtons() {
         btn.addClass("emotion");
         btn.addClass("btn");
         btn.addClass("btn-default");
-        btn.attr("onmouseover", "style.background='gray'");
-        btn.attr("onmouseout", "style.background='darkcyan'");
+        btn.attr("onmouseover", "style.background='orange'");
         btn.attr("data-name", emotions[i]);
         btn.text(emotions[i]);
         // Added the button to the buttons-view div
@@ -74,19 +73,19 @@ function renderButtons() {
     }
 }
 
-$("#add-emotion").on("click", function (event) {
+$("#add-emotion").on("click", function(event) {
     event.preventDefault();
-    var emotionInput = $("#emotion-input").val().trim().toLowerCase();
+    var emotionAdd = $("#emotion-add").val().trim().toLowerCase();
     // Do not add empty button in
-    if (emotionInput.length === 0)
+    if (emotionAdd.length === 0)
         return;
     // Do not add dups
-    if (emotions.includes(emotionInput)) {
-        alert("Do not add ! The emotion name is in the button list ...");
+    if (emotions.includes(emotionAdd)) {
+        alert("Done got it, try another");
         return;
     }
 
-    emotions.push(emotionInput);
+    emotions.push(emotionAdd);
     // Calling renderButtons which handles the processing of emotions array
     renderButtons();
 });

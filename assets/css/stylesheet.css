@@ -1,6 +1,6 @@
 body {
     margin: 10px;
-    font-family: 'Staatliches', cursive;;
+    font-family: 'Staatliches', cursive;
     font-size: 28px;
     max-width: 1080px;
     width: 100%;
@@ -39,10 +39,11 @@ span {
 
 button {
     margin: 2px;
-    padding: 2px;
+    padding: 10px;
     height: 42px;
     font-family: 'Staatliches', cursive;
     text-align: center;
     background-color: hotpink;
     color: white;
+    outline-style: line;
 }
