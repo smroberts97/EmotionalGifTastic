@@ -10,6 +10,13 @@ body {
     background-size: 1000px 700px;
 }
 
+#jumbotron {
+    width: 1000px;
+    height: 200px;
+    color: blue;
+}
+
+
 #img-display {
     max-width: 1020px;
     width: 100%;

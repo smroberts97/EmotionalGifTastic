@@ -15,26 +15,26 @@ function displayEmotionImg() {
         for (var i = 0; i < showImages; i++) {
             var stillImgUrl = response.data[i].images.downsized_still.url;
             var animateUrl = response.data[i].images.downsized.url;
-            
+           //images are too big; had to reduce the size to fit on the page and work; reference snippet on stackoverflow 
             var widthSize = parseInt(response.data[i].images.downsized_still.width) / 1.5;
             if (widthSize > 220) {
                 widthSize /= 2;
             }
 
             var aCard = $("<div>");
-            // a card contains an img, rating
+            // create a card that puts together an img, rating
             aCard.addClass("card-div");
             aCard.attr("width", widthSize);
-            // For rating
+            // getting the rating and putting it on the page
             var aSpan = $("<span>");
             aSpan.html("Rating: " + response.data[i].rating);
-            // For image
+            // getting the image and getting it to be still or animated with attributes; reference snippet on W3 schools
             var anImg = $("<img>");
             anImg.attr("src", stillImgUrl);
             anImg.attr("url-still", stillImgUrl);
             anImg.attr("data-state", "still");
             anImg.attr("url-animate", animateUrl);
-
+            //correct image sizing; reference snippet on stackoverflow
             anImg.attr("width", widthSize);
             anImg.addClass("gif");
             aCard.append(aSpan, anImg);
@@ -47,11 +47,11 @@ function displayEmotionImg() {
 function imgClickHandler() {
     var dataState = $(this).attr("data-state");
     if (dataState === "still") {
-        // the clicked image's state is still, click to animate
+        // when fills the page, image is still, click to animate
         $(this).attr("src", $(this).attr("url-animate"));
         $(this).attr("data-state", "animate");
     } else {
-        // the clicked image's state is animate, click to still
+        // the clicked image animates, click to make still again
         $(this).attr("src", $(this).attr("url-still"));
         $(this).attr("data-state", "still");
     }
@@ -86,15 +86,13 @@ $("#emotion-add").on("click", function(event) {
     }
 
     emotions.push(emotionAdd);
-    // Calling renderButtons which handles the processing of emotions array
+    // process array and make into buttons
     renderButtons();
 });
 
-// Adding click event listeners to all elements with a class of "gif"
+// click event listener class
 $(document).on("click", ".gif", imgClickHandler);
-
-// Adding click event listeners to all elements with a class of "emotion"
 $(document).on("click", ".emotion", displayEmotionImg);
 
-// Calling the renderButtons function to display the intial buttons
+//make buttons
 renderButtons();
