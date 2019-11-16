@@ -1,2 +1,2 @@
 # EmotionalGifTastic
-Gif app that pulls emotions
+Gif app that pulls on your emotions
